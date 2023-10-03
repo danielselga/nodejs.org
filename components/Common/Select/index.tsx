@@ -11,6 +11,7 @@ type SelectProps = {
   placeholder?: string;
   dropdownLabel?: string;
   label?: string;
+  inline?: boolean;
   onChange?: (value: string) => void;
 };
 
@@ -59,7 +60,9 @@ const Select: FC<SelectProps> = ({
                       value={value}
                       className={`${styles.item} ${styles.text}`}
                     >
-                      <Primitive.ItemText>{label}</Primitive.ItemText>
+                      <Primitive.ItemText>
+                        <Primitive.Icon></Primitive.Icon> {label}
+                      </Primitive.ItemText>
                     </Primitive.Item>
                   );
                 })}
